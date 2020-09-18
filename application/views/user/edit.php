@@ -11,27 +11,29 @@
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="email" name="email" value="<?= $user['email']; ?>">
+                    <input type="text" class="form-control" id="email" name="email" value="<?= $user['email']; ?>" readonly>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="fullName" name="fullName">
+                    <input type="text" class="form-control" id="fullName" name="fullName" value="<?= $user['fullName']; ?>">
+                    <?= form_error('fullName', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class=" form-group row">
                 <label for="callName" class="col-sm-2 col-form-label">Call Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="callName" name="callName">
+                    <input type="text" class="form-control" id="callName" name="callName" value="<?= $user['callName']; ?>">
+                    <?= form_error('callName', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
             </div>
-            <div class="form-group row">
+            <div class=" form-group row">
                 <div class="col-sm-2">Picture</div>
                 <div class="col-sm-10">
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="" class=" img-thumbnail" alt="">
+                            <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" class="img-thumbnail" alt="">
                         </div>
                         <div class="col-sm-9">
                             <div class="custom-file">
